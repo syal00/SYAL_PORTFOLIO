@@ -32,18 +32,15 @@ const AboutMe = () => {
             marginBottom: "1rem",
           }}
         >
-          Hi, I'm <strong className="highlight">Rakesh Syal</strong> — a{" "}
-          <strong className="highlight">User Experience Designer Co-op</strong> with foundational skills in user-centered design principles, UX specification creation, and front-end technologies including HTML, CSS, and JavaScript. I'm experienced in collaborating with cross-functional teams in Agile environments to deliver innovative, scalable design solutions.
+          I'm a <strong className="highlight">Web Development and Internet Applications (WDIA)</strong> student at Algonquin College with a strong interest in building practical, user-friendly web applications. I work across both front-end and back-end technologies, using languages such as HTML, CSS, JavaScript, PHP, Python, and C#, and frameworks like React and .NET, with experience building and consuming REST APIs and managing data using MySQL and SQLite.
         </p>
 
         <p className="muted content-section">
-          Proficient with design tools such as Figma and Adobe Creative Suite, with strong communication skills to present compelling design rationales. I enjoy finding ways to blend{" "}
-          <strong className="highlight">artistic creativity</strong> with{" "}
-          <strong className="highlight">technical precision</strong>. Eager to contribute creative problem-solving and initiative-driven design work in a hybrid team setting.
+          Hi, I'm <strong className="highlight">Rakesh Syal</strong>, a <strong className="highlight">User Experience Designer Co-op</strong> with a solid foundation in user-centered design, UX specification creation, and usability testing. I use tools such as Figma and Adobe Creative Suite (Photoshop and Illustrator) to design intuitive interfaces and clearly communicate design decisions through presentations and documentation.
         </p>
 
         <p className="muted content-section">
-          Currently pursuing a Diploma in Web Development and Internet Applications at Algonquin College, with hands-on experience in front-end and back-end development. Seeking opportunities to apply my UX design and development skills to create impactful user experiences.
+          Alongside development and design, I have hands-on experience with Git/GitHub, Docker, and system environments including Linux, Windows, and Raspberry Pi. I also bring a working understanding of networking concepts such as routing, switching, firewalls, and troubleshooting. I enjoy collaborating in Agile environments, value clear communication and teamwork, and enjoy blending creative thinking with technical precision to deliver reliable, impactful digital solutions.
         </p>
 
         {/* --- Education Section --- */}

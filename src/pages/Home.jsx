@@ -11,18 +11,16 @@ const linkedinLogo = '/linkedin.png'
 const gmailLogo = '/gmail.png'
 const whatsappLogo = '/whatsapp.png'
 const instagramLogo = '/insta.png'
-const facebookLogo = '/facebook.png'
 
 export default function Home() {
   const professions = []
 
   const quickLinks = [
-    { img: githubLogo, title: 'GitHub', link: 'https://github.com' },
-    { img: linkedinLogo, title: 'LinkedIn', link: 'https://www.linkedin.com' },
+    { img: githubLogo, title: 'GitHub', link: 'https://github.com/syal00' },
+    { img: linkedinLogo, title: 'LinkedIn', link: 'https://www.linkedin.com/in/rakesh-syal-974b61362/' },
     { img: gmailLogo, title: 'Email', link: 'mailto:syal0005@algonquinlive.com' },
-    { img: whatsappLogo, title: 'WhatsApp', link: 'https://wa.me/+13686454733' },
-    { img: instagramLogo, title: 'Instagram', link: '#' },
-    { img: facebookLogo, title: 'Facebook', link: '#' },
+    { img: whatsappLogo, title: 'WhatsApp', link: 'https://wa.me/3686454733' },
+    { img: instagramLogo, title: 'Instagram', link: 'https://www.instagram.com/syal_pb07?igsh=N28zcmRvaXlreGx1&utm_source=qr' },
   ]
 
   return (
