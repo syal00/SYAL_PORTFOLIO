@@ -11,13 +11,13 @@ I'm a **Web Development and Internet Applications (WDIA)** student at **Algonqui
 ## 🖼️ Screenshots
 
 ### Home
-![Home page](./docs/screenshots/home.png)
+<img width="1400" alt="Home page" src="https://raw.githubusercontent.com/syal00/SYAL_PORTFOLIO/main/docs/screenshots/home.png" />
 
 ### Skills
-![Skills page](./docs/screenshots/skills.png)
+<img width="1400" alt="Skills page" src="https://raw.githubusercontent.com/syal00/SYAL_PORTFOLIO/main/docs/screenshots/skills.png" />
 
 ### Work / Projects
-![Work page](./docs/screenshots/work.png)
+<img width="1400" alt="Work page" src="https://raw.githubusercontent.com/syal00/SYAL_PORTFOLIO/main/docs/screenshots/work.png" />
 
 ---
 
