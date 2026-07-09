@@ -1,36 +1,49 @@
 # 💻 Rakesh Syal — Portfolio Website
-Welcome to my personal portfolio website built with **React.js**, **Framer Motion**, and **modern UI design** principles.
-It showcases my work, projects, skills, and journey as a **Backend Developer, Full Stack Developer, and User Experience Designer**.
 
-🌐 **Website:** [[[rakesh-syal-portfolio]]](https://rakesh-syal.vercel.app/)
+My personal portfolio built with **Next.js**, **Tailwind CSS**, and **Framer Motion**. It reflects how I think about development: clean engineering, thoughtful UX, and projects that solve real problems.
 
-🖼️ **Screenshots**
-<img width="1902" height="994" alt="Screenshot 2025-11-03 232447" src="https://github.com/user-attachments/assets/6f78ceb0-363c-41e8-9eb9-a26fa814e8ac" />
-<img width="1894" height="992" alt="image" src="https://github.com/user-attachments/assets/8a6eeff0-3ebc-446c-a1ac-5f1a02279ac8" />
-<img width="1903" height="1044" alt="Screenshot 2025-11-04 153204" src="https://github.com/user-attachments/assets/355b1c4c-83e6-4465-9081-bff34bb3ad3b" />
+I'm a **Web Development and Internet Applications (WDIA)** student at **Algonquin College** in Ottawa, ON — a full-stack developer who enjoys turning ideas into reliable digital experiences.
+
+🌐 **Live site:** [rakesh-syal.vercel.app](https://rakesh-syal.vercel.app/)
+
+---
+
+## 🖼️ Screenshots
+
+### Home
+![Home page](./docs/screenshots/home.png)
+
+### Skills
+![Skills page](./docs/screenshots/skills.png)
+
+### Work / Projects
+![Work page](./docs/screenshots/work.png)
+
 ---
 
 ## 🚀 Features
 
-* 🎨 **Modern UI/UX** with black-based aesthetic theme
-* ⚡ Smooth **Framer Motion** animations
-* 💼 **Projects, Resume, and Contact sections**
-* 🧠 Tech-focused portfolio highlighting Full Stack Development and User Experience Design projects
-* 📨 Functional contact form powered by **EmailJS**
-* 🧩 Responsive design for all screen sizes
+* 🎨 **Dark glassmorphism UI** with particle background and smooth page transitions
+* ⚡ **Framer Motion** animations across hero, navigation, and section reveals
+* 🧠 **Skills showcase** — floating logo cloud, infinite tech train marquee, and categorized skill cards
+* 💼 **Project grid** — six featured builds with live links and tech tags
+* 📄 **Resume, About, and Contact** sections with EmailJS-powered form
+* 📱 **Fully responsive** — desktop nav, mobile bottom dock, and tablet-friendly layouts
+* 🚧 **Coming soon** placeholders for Gallery, Blog, and Certificates
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Category            | Tools / Libraries                        |
-| ------------------- | ---------------------------------------- |
-| **Frontend**        | React.js, HTML5, CSS3, JavaScript (ES6+) |
-| **Styling**         | Tailwind CSS / Custom CSS                |
-| **Animation**       | Framer Motion                            |
-| **Contact Form**    | EmailJS                                  |
-| **Version Control** | Git & GitHub                             |
-| **Deployment**      | Vercel / Netlify                         |
+| Category            | Tools / Libraries                                      |
+| ------------------- | ------------------------------------------------------ |
+| **Framework**       | Next.js 15 (Pages Router), React 18                    |
+| **Styling**         | Tailwind CSS, custom global styles                     |
+| **Animation**       | Framer Motion, tsparticles                           |
+| **Icons**           | React Icons, Lucide React                              |
+| **Contact Form**    | EmailJS                                                |
+| **Version Control** | Git & GitHub                                           |
+| **Deployment**      | Vercel                                                 |
 
 ---
 
@@ -48,27 +61,41 @@ cd SYAL_PORTFOLIO
 # 3️⃣ Install dependencies
 npm install
 
-# 4️⃣ Run development server
-npm start or npm run dev
+# 4️⃣ Add environment variables (for contact form)
+# Create .env.local with your EmailJS keys:
+# NEXT_PUBLIC_EMAILJS_SERVICE_ID=
+# NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=
+# NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=
+
+# 5️⃣ Run development server
+npm run dev
 ```
 
-Now open [http://localhost:5173](http://localhost:5173) in your browser 🚀
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+**Other scripts:**
+
+```bash
+npm run build   # Production build
+npm start       # Serve production build
+npm run lint    # ESLint
+```
 
 ---
 
 ## 📬 Contact
 
-If you’d like to collaborate or just say hi 👋, feel free to reach out!
+If you'd like to collaborate or just say hi 👋, feel free to reach out!
 
 * 📧 **Email:** [syal0005@algonquinlive.com](mailto:syal0005@algonquinlive.com)
-* 💼 **LinkedIn:** [linkedin.com](https://www.linkedin.com)
+* 💼 **LinkedIn:** [linkedin.com/in/rakesh-syal-974b61362](https://www.linkedin.com/in/rakesh-syal-974b61362/)
+* 🐙 **GitHub:** [github.com/syal00](https://github.com/syal00)
 
 ---
 
 ## 🌟 Deployment
 
-Deployed seamlessly on **Vercel** for continuous integration and fast CDN delivery.
-Every push to the `main` branch triggers an automatic rebuild and deployment.
+Deployed on **Vercel** with automatic rebuilds on every push to `main`.
 
 ---
 
@@ -79,4 +106,4 @@ Feel free to fork, use, and build upon it ⭐
 
 ---
 
-> *“Showcasing my work and passion through technology 💻”*
+> *"Turning ideas into digital reality — one project at a time."*
