@@ -36,7 +36,7 @@ const useCardTilt = () => {
         const rotateX = (0.5 - py) * 8;
         const rotateY = (px - 0.5) * 8;
 
-        card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-2px)`;
+        card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
         card.style.setProperty("--mx", `${px * 100}%`);
         card.style.setProperty("--my", `${py * 100}%`);
       });

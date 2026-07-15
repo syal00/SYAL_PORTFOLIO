@@ -9,7 +9,13 @@ import { fadeIn } from "../variants";
 const infoCards = [
   { label: "📍 Location", value: "Ottawa, ON, Canada" },
   { label: "💼 Expertise", value: "Full-Stack Developer" },
-  { label: "📧 Contact", value: "syal0005@algonquinlive.com" },
+  {
+    label: "📧 Contact",
+    value: "Open to work",
+    secondary: "syal0005@algonquinlive.com",
+    href: "mailto:syal0005@algonquinlive.com",
+    title: "syal0005@algonquinlive.com",
+  },
 ];
 
 const Home = () => {
@@ -20,7 +26,7 @@ const Home = () => {
       </div>
 
       <div className="w-full h-full bg-gradient-to-r from-primary/20 via-transparent to-transparent relative z-10 px-4 sm:px-6 md:px-0">
-        <div className="container mx-auto flex flex-col items-center lg:items-start justify-center gap-y-8 sm:gap-y-10 min-h-[calc(100dvh-170px)] sm:min-h-[calc(100dvh-160px)] lg:min-h-[calc(100dvh-140px)] xl:min-h-screen xl:pt-24">
+        <div className="container mx-auto flex flex-col items-center lg:items-start justify-center gap-y-8 sm:gap-y-10 min-h-[calc(100dvh-180px)] sm:min-h-[calc(100dvh-170px)] lg:min-h-[calc(100dvh-140px)] xl:min-h-[calc(100dvh-80px)] xl:pt-24">
           <div className="flex-1 w-full max-w-lg md:max-w-xl lg:max-w-[58%] xl:max-w-[54%] text-center lg:text-left">
             <motion.h1
               variants={fadeIn("down", 0.2)}
@@ -52,21 +58,49 @@ const Home = () => {
               initial="hidden"
               animate="show"
               exit="hidden"
-              className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 sm:mb-10 w-full"
+              className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-8 sm:mb-10 w-full items-stretch"
             >
-              {infoCards.map((info, i) => (
-                <div
-                  key={i}
-                  className="glass-card px-4 sm:px-5 py-3 hover:-translate-y-1 hover:border-accent/40 transition-all duration-300 text-center sm:text-left"
-                >
-                  <div className="text-xs font-semibold text-accent mb-1">
-                    {info.label}
-                  </div>
-                  <div className="text-xs sm:text-sm text-white/70 break-words">
-                    {info.value}
-                  </div>
-                </div>
-              ))}
+              {infoCards.map((info, i) => {
+                const cardClassName =
+                  "glass-card h-full flex flex-col justify-center px-4 sm:px-5 py-3 text-center md:text-left";
+                const cardContent = (
+                  <>
+                    <div className="text-xs font-semibold text-accent mb-1">
+                      {info.label}
+                    </div>
+                    <div className="text-xs sm:text-sm text-white/70 break-words">
+                      {info.value}
+                    </div>
+                    {info.secondary && (
+                      <div className="text-[0.75rem] sm:text-[0.8rem] text-white/60 mt-0.5 break-all">
+                        {info.secondary}
+                      </div>
+                    )}
+                  </>
+                );
+
+                return (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.45 + i * 0.1, ease: "easeOut" }}
+                    className="h-full"
+                  >
+                    {info.href ? (
+                      <a
+                        href={info.href}
+                        title={info.title}
+                        className={`${cardClassName} cursor-pointer block h-full`}
+                      >
+                        {cardContent}
+                      </a>
+                    ) : (
+                      <div className={cardClassName}>{cardContent}</div>
+                    )}
+                  </motion.div>
+                );
+              })}
             </motion.div>
 
             <motion.div

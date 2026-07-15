@@ -1,100 +1,327 @@
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 
-const PDF_PATH = "/myresume/syal_main_portfolio.pdf";
+const PDF_PATH = "/resume/rakesh_syal_resume.pdf";
 
 const Block = ({ title, children, delay }) => (
-  <motion.div variants={fadeIn("up", delay)} initial="hidden" whileInView="show" viewport={{ once: true }} className="glass-card p-4 sm:p-6 md:p-8 mb-4 sm:mb-6">
+  <motion.div
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, amount: 0.15 }}
+    transition={{ duration: 0.5, delay, ease: "easeOut" }}
+    className="glass-card p-4 sm:p-6 md:p-8 mb-4 sm:mb-6"
+  >
     <h4 className="text-accent font-semibold mb-4 text-lg">{title}</h4>
     {children}
   </motion.div>
 );
 
+const ProjectTitle = ({ title, href }) => {
+  if (!href) {
+    return <strong className="block text-white mb-2">{title}</strong>;
+  }
+
+  return (
+    <strong className="block text-white mb-2">
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hover:text-accent transition-colors duration-300"
+      >
+        {title}
+      </a>
+    </strong>
+  );
+};
+
+const projects = [
+  {
+    title: "Payroll Management Platform — Personal Project · Live",
+    href: "https://payroll-manager-lake.vercel.app",
+    linkLabel: "payroll-manager-lake.vercel.app",
+    bullets: [
+      "Built a full-stack payroll and workforce management web app, including a live dashboard, timesheets, payslip generation, and compliance tracking UI",
+      "Implemented role-based access control concepts and a sign-in flow",
+      "Designed a modern landing page showcasing product features and onboarding steps",
+    ],
+  },
+  {
+    title:
+      "Freelance Web Developer — Iron Watch Security Inc. — Freelance Project · Live",
+    href: "https://ironwatchsecurity.ca",
+    linkLabel: "ironwatchsecurity.ca",
+    bullets: [
+      "Designed and developed a full business website for a security services company, including service pages, a quote-request flow, and a contact system",
+      "Built a responsive, multi-page site covering services (mobile patrol, CCTV, event security), FAQs, and client testimonials",
+    ],
+  },
+  {
+    title:
+      "Website Builder — SCL Inc. — Personal Project (built for a friend) · Live",
+    href: "https://teamscl.ca",
+    linkLabel: "teamscl.ca",
+    bullets: [
+      "Set up and customized a business website using GoDaddy's drag-and-drop Website Builder",
+      "Configured branding, service pages, contact/quote forms, and business information for a construction and landscaping business",
+    ],
+  },
+  {
+    title:
+      "thlin.ca Website Redesign — College Capstone Team Project · In Progress",
+    href: "https://thlin-ca.vercel.app",
+    linkLabel: "thlin-ca.vercel.app",
+    bullets: [
+      "Collaborating in a team to redesign the website for thehealthline.ca Information Network, an Ontario health and community services non-profit",
+      "Contributing to front-end structure and page design as part of a final-year capstone project",
+    ],
+  },
+  {
+    title:
+      "Student Registration Portal (CourseLedger) — Personal Project · Live",
+    href: "https://student-registration-portal-plq6.onrender.com",
+    linkLabel: "student-registration-portal-plq6.onrender.com",
+    bullets: [
+      "Built a full-stack student registration portal using ASP.NET Core MVC and Entity Framework Core",
+      "Implemented course, student, academic record, and role management with SQL Server",
+    ],
+  },
+  {
+    title: "Taskify — Personal Project · In Progress",
+    href: null,
+    linkLabel: null,
+    bullets: [
+      "Developing a task management web app using Laravel and PHP",
+    ],
+  },
+];
+
+const skillGroups = [
+  {
+    label: "Languages",
+    items: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Python",
+      "C#",
+      "PHP",
+      "SQL",
+      "XML/JSON",
+    ],
+  },
+  {
+    label: "Frameworks & Libraries",
+    items: [
+      "React",
+      ".NET",
+      ".NET Razor",
+      "ASP.NET Core MVC",
+      "Laravel",
+      "Bootstrap",
+    ],
+  },
+  {
+    label: "Databases",
+    items: [
+      "MySQL",
+      "SQLite",
+      "SQL Server",
+      "Database Design & Administration",
+    ],
+  },
+  {
+    label: "APIs & Web",
+    items: ["REST APIs", "Content Management Systems (CMS)", "Web Security"],
+  },
+  {
+    label: "Tools & Version Control",
+    items: [
+      "Git",
+      "GitHub",
+      "Visual Studio Code",
+      "Docker",
+      "Debugging Tools",
+    ],
+  },
+  {
+    label: "Systems & Networking",
+    items: [
+      "Raspberry Pi",
+      "Network Operating Systems",
+      "Networking Concepts",
+    ],
+  },
+  {
+    label: "Design Tools",
+    items: ["Figma", "Adobe Photoshop", "Adobe Illustrator"],
+  },
+];
+
 const Resume = () => (
   <div className="page-section">
     <div className="container mx-auto max-w-4xl px-4 sm:px-6 md:px-0">
-      <motion.h2 variants={fadeIn("up", 0.1)} initial="hidden" animate="show" className="h2 text-center lg:text-left">
+      <motion.h2
+        variants={fadeIn("up", 0.1)}
+        initial="hidden"
+        animate="show"
+        className="h2 text-center lg:text-left"
+      >
         Resume <span className="text-accent">📄</span>
       </motion.h2>
-      <motion.p variants={fadeIn("up", 0.2)} initial="hidden" animate="show" className="mb-6 sm:mb-8 text-center lg:text-left">
+      <motion.p
+        variants={fadeIn("up", 0.2)}
+        initial="hidden"
+        animate="show"
+        className="mb-6 sm:mb-8 text-center lg:text-left"
+      >
         A quick glance at my journey.
       </motion.p>
 
       <Block title="RAKESH SYAL" delay={0.1}>
-        <p className="mb-3">Web Development and Internet Applications (WDIA) Student</p>
-        <p className="text-sm text-white/50">Email: syal0005@algonquinlive.com<br />Phone: +1 (368) 645-4733</p>
+        <p className="mb-3 text-white text-sm sm:text-base">
+          Full-Stack Developer | Web Development &amp; Internet Applications
+          Student
+        </p>
+        <div className="flex flex-col sm:flex-row sm:flex-wrap gap-2 text-sm text-white/50 leading-relaxed">
+          <span>Ottawa, ON, Canada</span>
+          <span className="hidden sm:inline text-white/30">|</span>
+          <a
+            href="mailto:syal0005@algonquinlive.com"
+            className="hover:text-accent transition-colors break-all"
+          >
+            syal0005@algonquinlive.com
+          </a>
+          <span className="hidden sm:inline text-white/30">|</span>
+          <a
+            href="https://github.com/syal00"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-accent transition-colors break-all"
+          >
+            github.com/syal00
+          </a>
+          <span className="hidden sm:inline text-white/30">|</span>
+          <a
+            href="https://linkedin.com/in/rakesh-syal-974b61362"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-accent transition-colors break-all"
+          >
+            linkedin.com/in/rakesh-syal-974b61362
+          </a>
+          <span className="hidden sm:inline text-white/30">|</span>
+          <a
+            href="https://syal-portfolio.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-accent transition-colors break-all"
+          >
+            syal-portfolio.vercel.app
+          </a>
+        </div>
       </Block>
 
-      <Block title="Summary" delay={0.15}>
-        <p>A passionate web designer and developer with a proven track record of creating visually engaging, user-friendly websites. I enjoy collaborating with diverse clients to deliver tailored solutions that enhance user engagement, and I&apos;m excited to bring creativity and technical expertise to elevate brand presence and achieve business goals.</p>
+      <Block title="SUMMARY" delay={0.15}>
+        <p>
+          Full-stack developer and Web Development &amp; Internet Applications
+          student at Algonquin College. Experienced across the stack with React,
+          .NET, Laravel, and PHP, with hands-on freelance and capstone project
+          work spanning business websites, payroll systems, and student
+          management platforms. Comfortable working independently and in Agile
+          teams, from UI design in Figma through backend, database, and basic
+          network configuration.
+        </p>
       </Block>
 
-      <Block title="Experience" delay={0.2}>
-        <strong className="block text-white mb-3">Web Designer — SCL INC</strong>
-        <ul className="space-y-2 list-none">
-          <li>• Designed and developed responsive websites ensuring cross-device compatibility</li>
-          <li>• Implemented backend functionality including database integration and authentication</li>
-          <li>• Provided technical support for IT and networking issues</li>
-          <li>• Configured and maintained secure network devices (routers, switches, firewalls)</li>
-          <li>• Collaborated with cross-functional teams to deliver web and networking solutions</li>
-          <li>• Improved design quality by 50% and achieved a 95% client satisfaction rate</li>
-        </ul>
-      </Block>
-
-      <Block title="Education" delay={0.25}>
-        <strong className="block text-white mb-1">Algonquin College of Applied Arts and Technology</strong>
-        <p className="mb-1">Diploma — Web Development and Internet Applications</p>
-        <p className="text-sm text-white/50 mb-3">Ottawa, ON | 2025 – 2027 · GPA: 3.4 / 4.0 (85%)</p>
-        <strong className="block text-white/80 text-sm mb-2">Relevant Coursework:</strong>
-        <ul className="space-y-1 list-none text-sm">
-          <li>• Web Development</li><li>• Front-End Design</li><li>• Server-Side Programming</li><li>• Full-Stack Development</li>
-        </ul>
-      </Block>
-
-      <Block title="Skills" delay={0.3}>
-        {[
-          { label: "Programming & Web", items: ["Python", "JavaScript", "C#", "PHP", "C++", "HTML", "CSS", "Razor", ".NET"] },
-          { label: "Databases & Tools", items: ["MySQL", "SQLite", "Git", "GitHub", "Raspberry Pi"] },
-          { label: "Design", items: ["Figma", "Adobe Photoshop", "Adobe Illustrator"] },
-        ].map((group) => (
+      <Block title="TECHNICAL SKILLS" delay={0.2}>
+        {skillGroups.map((group) => (
           <div key={group.label} className="mb-4 last:mb-0">
-            <strong className="block text-white/80 text-sm mb-2">{group.label}:</strong>
+            <strong className="block text-white/80 text-sm mb-2">
+              {group.label}:
+            </strong>
             <div className="flex flex-wrap gap-2">
-              {group.items.map((s) => (<span key={s} className="text-xs px-3 py-1.5 rounded-md bg-white/5 border border-white/10">{s}</span>))}
+              {group.items.map((s) => (
+                <span key={s} className="skill-pill text-xs px-3 py-1.5">
+                  {s}
+                </span>
+              ))}
             </div>
           </div>
         ))}
       </Block>
 
-      <Block title="Languages" delay={0.35}><p>English, Punjabi</p></Block>
-      <Block title="Achievements" delay={0.4}><p>Best Academic Performance Award — DAV Public School</p></Block>
-
-      <Block title="Projects" delay={0.45}>
-        <div className="space-y-4">
-          {[
-            ["🏦 Banking System — Console Application", "A scalable console-based banking system supporting account creation, deposits, withdrawals, and customer lookup, applying OOP principles and exception handling."],
-            ["🎓 Student Registration Portal", "A full-stack student registration portal using ASP.NET Core MVC and Entity Framework Core enabling secure course registration and real-time academic status."],
-            ["🚦 Traffic Light Simulator", "A traffic light simulation using Python and CircuitPython, integrating NeoPixel LEDs with adjustable timing logic."],
-            ["🧾 Invoice Manager Web Application", "A full-stack Invoice Manager using PHP and MySQL managing 20+ invoices with complete CRUD and multi-status workflows."],
-            ["✅ Task Manager Application", "A task management application to create, update, prioritize, and track tasks with workflow controls."],
-            ["🛡️ Security Company Website", "A professional website for a security services company, highlighting services, contact workflows, and brand identity."],
-            ["🏗️ Construction Company Website", "A responsive website for a construction company showcasing projects, services, and company profile."],
-          ].map(([title, desc]) => (
-            <div key={title}><strong className="block text-white mb-1">{title}</strong><p className="text-sm">{desc}</p></div>
+      <Block title="PROJECTS & EXPERIENCE" delay={0.25}>
+        <div className="space-y-6">
+          {projects.map((project) => (
+            <div key={project.title}>
+              <ProjectTitle title={project.title} href={project.href} />
+              {project.linkLabel && (
+                <p className="text-sm text-white/50 mb-2">
+                  <a
+                    href={project.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-accent hover:underline underline-offset-2"
+                  >
+                    {project.linkLabel}
+                  </a>
+                </p>
+              )}
+              <ul className="space-y-2 list-none">
+                {project.bullets.map((bullet) => (
+                  <li key={bullet}>• {bullet}</li>
+                ))}
+              </ul>
+            </div>
           ))}
         </div>
       </Block>
 
-      <motion.div variants={fadeIn("up", 0.5)} initial="hidden" whileInView="show" viewport={{ once: true }} className="glass-card overflow-hidden mb-6">
-        <iframe src={PDF_PATH} title="Rakesh Syal Resume" className="w-full h-[50vh] sm:h-[60vh] md:h-[650px] border-none bg-black/20" />
+      <Block title="EDUCATION" delay={0.3}>
+        <strong className="block text-white mb-1">
+          Diploma in Web Development and Internet Applications — Jan 2025 –
+          Present
+        </strong>
+        <p className="mb-1">Algonquin College, Ottawa, ON</p>
+        <p className="text-sm text-white/50 mb-3">GPA: 3.4 / 4.0 (85%)</p>
+        <p className="text-sm">
+          <strong className="text-white/80">Coursework: </strong>
+          Web Programming (JavaScript, PHP, .NET/C#), Database Design &amp;
+          Administration, Web Security, Network Operating Systems, Front-End
+          Design, Server-Side Programming, Full-Stack Development
+        </p>
+      </Block>
+
+      <Block title="LANGUAGES" delay={0.35}>
+        <p>English (Fluent) · Punjabi (Native) · Hindi (Fluent)</p>
+      </Block>
+
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.15 }}
+        transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
+        className="glass-card overflow-hidden mb-6"
+      >
+        <iframe
+          src={PDF_PATH}
+          title="Rakesh Syal Resume"
+          className="w-full h-[min(65vh,720px)] border-none bg-black/20"
+        />
       </motion.div>
 
       <div className="text-center lg:text-left">
-        <a href={PDF_PATH} download="Rakesh_Syal_Resume.pdf" className="inline-block w-full sm:w-auto text-center bg-accent text-primary font-semibold px-6 py-3 rounded-lg hover:opacity-90 transition-all duration-300">
+        <a
+          href={PDF_PATH}
+          download="rakesh_syal_resume.pdf"
+          className="btn-send inline-block w-full sm:w-auto text-center bg-accent text-primary font-semibold px-6 py-3 rounded-lg"
+        >
           ⬇️ Download Resume
         </a>
       </div>
     </div>
   </div>
 );
+
 export default Resume;

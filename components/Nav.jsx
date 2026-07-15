@@ -30,15 +30,16 @@ const Nav = () => {
 
   return (
     <nav className="flex flex-col items-center xl:justify-center gap-y-4 fixed h-max bottom-0 left-0 right-0 xl:left-auto xl:right-[2%] z-[70] top-auto xl:top-0 w-full xl:w-16 xl:max-w-md xl:h-screen pb-[env(safe-area-inset-bottom)]">
-      <div className="flex w-full xl:flex-col items-center justify-between xl:justify-center gap-x-2 sm:gap-x-4 xl:gap-y-6 overflow-x-auto scrollbar-none px-3 sm:px-6 md:px-12 xl:px-0 h-[62px] sm:h-[70px] xl:h-max py-4 sm:py-6 bg-white/10 backdrop-blur-sm text-xl sm:text-2xl xl:text-lg xl:rounded-full">
+      <div className="flex w-full xl:flex-col items-center justify-start sm:justify-between xl:justify-center gap-x-1 sm:gap-x-3 xl:gap-y-5 overflow-x-auto overscroll-x-contain scrollbar-none snap-x snap-mandatory px-2 sm:px-4 md:px-8 xl:px-0 min-h-[64px] sm:min-h-[70px] xl:h-max py-2 sm:py-4 bg-white/10 backdrop-blur-md text-xl sm:text-2xl xl:text-lg xl:rounded-full border-t border-white/10 xl:border-0">
         {navData.map((link, i) => (
           <Link
             className={`${
               link.path === pathname && "text-accent"
-            } relative flex items-center group hover:text-accent transition-all duration-300 shrink-0 p-1`}
+            } relative flex items-center justify-center group hover:text-accent transition-all duration-300 shrink-0 snap-center min-w-11 min-h-11 sm:min-w-12 sm:min-h-12`}
             href={link.path}
             key={i}
             aria-label={link.name}
+            aria-current={link.path === pathname ? "page" : undefined}
           >
             <div
               role="tooltip"
@@ -54,9 +55,7 @@ const Nav = () => {
                 />
               </div>
             </div>
-            <div>
-              <link.Icon aria-hidden />
-            </div>
+            <link.Icon aria-hidden className="w-5 h-5 sm:w-6 sm:h-6" />
           </Link>
         ))}
       </div>

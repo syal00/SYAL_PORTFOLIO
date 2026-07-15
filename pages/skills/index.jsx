@@ -8,7 +8,7 @@ import SkillTrain from "../../components/SkillTrain";
 import { fadeIn } from "../../variants";
 
 const Skills = () => (
-  <div className="page-section relative overflow-hidden">
+  <div className="page-section relative overflow-x-hidden">
     <Circles />
     <div className="container mx-auto px-4 sm:px-0 w-full">
       <motion.h2

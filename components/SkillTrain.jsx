@@ -1,8 +1,14 @@
-import Image from "next/image";
-import { Code2 } from "lucide-react";
+import {
+  Code2,
+  Bug,
+  Database,
+  Shield,
+  Server,
+  Network,
+  Layout,
+} from "lucide-react";
 import {
   SiPython,
-  SiC,
   SiSharp,
   SiJavascript,
   SiPhp,
@@ -11,49 +17,83 @@ import {
   SiDotnet,
   SiReact,
   SiMysql,
-  SiSqlite,
-  SiMicrosoftsqlserver,
   SiGit,
   SiGithub,
   SiDocker,
+  SiRaspberrypi,
+  SiBootstrap,
+  SiLaravel,
+  SiVisualstudiocode,
+  SiJson,
   SiFigma,
   SiAdobephotoshop,
   SiAdobeillustrator,
-  SiLinux,
-  SiWindows,
-  SiRaspberrypi,
 } from "react-icons/si";
 
-import { skillCategories } from "./SkillSlider";
-
-const trainSkills = [...new Set(skillCategories.flatMap((c) => c.items))];
+const trainSkills = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "Python",
+  "C#",
+  "PHP",
+  "SQL",
+  "XML/JSON",
+  "React",
+  ".NET",
+  ".NET Razor",
+  "ASP.NET Core MVC",
+  "Laravel",
+  "Bootstrap",
+  "MySQL",
+  "Database Design & Administration",
+  "REST API",
+  "Content Management Systems (CMS)",
+  "Web Security",
+  "Git",
+  "GitHub",
+  "Visual Studio Code",
+  "Debugging Tools",
+  "Docker",
+  "Raspberry Pi",
+  "Network Operating Systems",
+  "Networking Concepts",
+  "Figma",
+  "Adobe Photoshop",
+  "Adobe Illustrator",
+];
 
 const skillMeta = {
-  Python: { Icon: SiPython, color: "#3776AB" },
-  C: { Icon: SiC, color: "#A8B9CC" },
-  "C++": { image: "/logos/cpp.png", color: "#00599C" },
-  "C#": { Icon: SiSharp, color: "#9B4F96" },
-  JavaScript: { Icon: SiJavascript, color: "#F7DF1E" },
-  PHP: { Icon: SiPhp, color: "#777BB4" },
   HTML: { Icon: SiHtml5, color: "#E34F26" },
   CSS: { Icon: SiCss3, color: "#1572B6" },
-  Razor: { Icon: SiDotnet, color: "#512BD4" },
-  ".NET": { Icon: SiDotnet, color: "#512BD4" },
+  JavaScript: { Icon: SiJavascript, color: "#F7DF1E" },
+  Python: { Icon: SiPython, color: "#3776AB" },
+  "C#": { Icon: SiSharp, color: "#9B4F96" },
+  PHP: { Icon: SiPhp, color: "#777BB4" },
+  SQL: { Icon: SiMysql, color: "#CC2927" },
+  "XML/JSON": { Icon: SiJson, color: "#EAB308" },
   React: { Icon: SiReact, color: "#61DAFB" },
-  "ASP.NET Core MVC": { Icon: SiDotnet, color: "#512BD4" },
-  "REST API": { Icon: Code2, color: "#22d3ee" },
+  ".NET": { Icon: SiDotnet, color: "#512BD4" },
+  ".NET Razor": { Icon: SiDotnet, color: "#7C3AED" },
+  "ASP.NET Core MVC": { Icon: SiDotnet, color: "#6366F1" },
+  Laravel: { Icon: SiLaravel, color: "#FF2D20" },
+  Bootstrap: { Icon: SiBootstrap, color: "#7952B3" },
   MySQL: { Icon: SiMysql, color: "#4479A1" },
-  SQLite: { Icon: SiSqlite, color: "#003B57" },
-  "SQL Server": { Icon: SiMicrosoftsqlserver, color: "#CC2927" },
+  "Database Design & Administration": { Icon: Database, color: "#34d399" },
+  "REST API": { Icon: Code2, color: "#22d3ee" },
+  "Content Management Systems (CMS)": { Icon: Layout, color: "#a78bfa" },
+  "Web Security": { Icon: Shield, color: "#fbbf24" },
   Git: { Icon: SiGit, color: "#F05032" },
   GitHub: { Icon: SiGithub, color: "#ffffff" },
+  "Visual Studio Code": { Icon: SiVisualstudiocode, color: "#007ACC" },
+  "Debugging Tools": { Icon: Bug, color: "#fb7185" },
   Docker: { Icon: SiDocker, color: "#2496ED" },
+  "Raspberry Pi": { Icon: SiRaspberrypi, color: "#C51A4A" },
+  "Network Operating Systems": { Icon: Server, color: "#94a3b8" },
+  "Networking Concepts": { Icon: Network, color: "#38bdf8" },
   Figma: { Icon: SiFigma, color: "#F24E1E" },
   "Adobe Photoshop": { Icon: SiAdobephotoshop, color: "#31A8FF" },
   "Adobe Illustrator": { Icon: SiAdobeillustrator, color: "#FF9A00" },
-  Linux: { Icon: SiLinux, color: "#FCC624" },
-  Windows: { Icon: SiWindows, color: "#0078D6" },
-  "Raspberry Pi": { Icon: SiRaspberrypi, color: "#C51A4A" },
 };
 
 const getMeta = (name) => skillMeta[name] || { Icon: Code2, color: "#F13024" };
@@ -83,27 +123,17 @@ const Locomotive = () => (
 );
 
 const TrainCar = ({ name }) => {
-  const { Icon, color, image } = getMeta(name);
+  const { Icon, color } = getMeta(name);
 
   return (
-    <div className="relative flex flex-col items-center shrink-0 mx-1.5 sm:mx-2">
-      <div className="w-[96px] sm:w-[116px] h-[68px] sm:h-[78px] rounded-lg bg-gradient-to-b from-zinc-400 via-zinc-600 to-zinc-800 border border-zinc-500/35 p-[5px] shadow-md">
+    <div className="relative flex flex-col items-center shrink-0 mx-1.5 sm:mx-2 group">
+      <div className="train-car-body w-[96px] sm:w-[116px] h-[68px] sm:h-[78px] rounded-lg bg-gradient-to-b from-zinc-400 via-zinc-600 to-zinc-800 border border-zinc-500/35 p-[5px] shadow-md cursor-default">
         <div className="w-full h-full rounded-md bg-[#040a12] border border-cyan-400/25 shadow-[inset_0_0_16px_rgba(34,211,238,0.22)] flex flex-col items-center justify-center gap-0.5 px-1">
-          {image ? (
-            <Image
-              src={image}
-              alt={name}
-              width={28}
-              height={28}
-              className="w-6 h-6 sm:w-7 sm:h-7 object-contain"
-            />
-          ) : (
-            <Icon
-              className="w-6 h-6 sm:w-7 sm:h-7 shrink-0"
-              style={{ color }}
-              aria-hidden
-            />
-          )}
+          <Icon
+            className="w-6 h-6 sm:w-7 sm:h-7 shrink-0 transition-transform duration-300 group-hover:scale-110"
+            style={{ color }}
+            aria-hidden
+          />
           <span className="text-[6px] sm:text-[7px] text-cyan-200/90 font-semibold text-center leading-tight line-clamp-2 uppercase tracking-wide">
             {name}
           </span>
@@ -137,8 +167,7 @@ const SkillTrain = () => {
         🚂 Tech Train — all skills on board
       </p>
 
-      <div className="relative overflow-hidden rounded-xl border border-white/10 bg-[#080a12]/90 py-5 sm:py-6">
-        {/* track bed */}
+      <div className="relative overflow-hidden rounded-xl border border-white/10 bg-[#080a12]/90 py-6 sm:py-8">
         <div className="absolute bottom-6 sm:bottom-7 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-zinc-600 to-transparent opacity-60" />
         <div className="absolute bottom-[22px] sm:bottom-[26px] left-0 right-0 h-px bg-cyan-500/20" />
 
@@ -147,7 +176,6 @@ const SkillTrain = () => {
           <TrainTrack skills={trainSkills} />
         </div>
 
-        {/* edge fade */}
         <div className="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-20 bg-gradient-to-r from-[#080a12] to-transparent z-10" />
         <div className="pointer-events-none absolute inset-y-0 right-0 w-12 sm:w-20 bg-gradient-to-l from-[#080a12] to-transparent z-10" />
       </div>
