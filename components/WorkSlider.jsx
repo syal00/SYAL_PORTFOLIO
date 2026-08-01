@@ -5,7 +5,8 @@ import { ExternalLink, FileText } from "lucide-react";
 
 /** Add a docs path here once the PDF is uploaded under /public/docs/. */
 const READY_DOCS = new Set([
-  // "/docs/payroll-doc.pdf",
+  "/docs/payroll-doc.pdf",
+  "/docs/student-portal-doc.pdf",
 ]);
 
 export const projectsData = [
